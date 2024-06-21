@@ -19,8 +19,6 @@ from datetime import datetime
 import pytz
 import requests
 
-# print('test auto reload 2')
-
 def start_telegram_bot(bot_token,chat_id,history,PRINT=True,TELEGRAM=True):
     
     now = datetime.now(pytz.timezone('Asia/Tehran'))

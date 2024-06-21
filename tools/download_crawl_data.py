@@ -5,8 +5,6 @@ import os
 from pathlib import Path
 
 
-
-
 ### !!  not used anymore, newer version
 def download_raw_data(bot,opts,history):
     ##? https://github.com/ndrplz/google-drive-downloader
@@ -15,11 +13,7 @@ def download_raw_data(bot,opts,history):
 
     os.makedirs('/kaggle/temp', exist_ok = True)
     if opts['mode'] == 'real_data':
-        ## https://drive.google.com/file/d/1IDfcEd-6ecMES5PevV5hh20Aogk8FqCi/view?usp=sharing real_videos_orginal_1
-        ##https://drive.google.com/file/d/1mBCPkesJkjw9WKAYQh0BOqouT1F-WiL6/view?usp=sharing real_videos_orginal_2
-        
-        ##https://drive.google.com/file/d/1sYziU0sCaSDh7GZSjTSa_4GHUSzVkpZ9/view?usp=sharing real_videos_orginal_full_1
-        ##https://drive.google.com/file/d/17tE3W7JHRu7sh-xYK34MOF4j6rhClxM2/view?usp=sharing real_videos_orginal_full_2
+
         google_drive_file_ids = ['1sYziU0sCaSDh7GZSjTSa_4GHUSzVkpZ9','17tE3W7JHRu7sh-xYK34MOF4j6rhClxM2']
         for file_id in google_drive_file_ids:
             dest_path = '/kaggle/temp/real_videos_orginal.zip'
@@ -29,12 +23,7 @@ def download_raw_data(bot,opts,history):
             file_size = os.path.getsize(dest_path)
             if file_size > 1000000000:break
     elif opts['mode'] == 'syntetic_data':
-        ##https://drive.google.com/file/d/1vmbb_lOxo_7zrmUR0RPEg1HOhEbNlfQN/view?usp=sharing SBVPI.zip
-        ##https://drive.google.com/file/d/14vLRf06ThbRr8kwjZjCktngOe3F15rR4/view?usp=sharing SBVPI.zip copy_1
 
-        ##https://drive.google.com/file/d/1PKnAn5dYDeFDTIUiqTpss0Y2QkGZAywL/view?usp=sharing copy of syntetic_raw_images_ver_0.02 , mortezaomidiyazd
-        ##https://drive.google.com/file/d/19SXli2BLtr3-hGiQkRoO70N8qM-9tgbS/view?usp=sharing syntetic_raw_images_ver_0.02 , mortezaomidiyazd
-        
         if opts['synetic_data_ver'] == 0.01:
             google_drive_file_ids = ['1vmbb_lOxo_7zrmUR0RPEg1HOhEbNlfQN','14vLRf06ThbRr8kwjZjCktngOe3F15rR4']
             dest_path = '/kaggle/temp/SBVPI.zip'
